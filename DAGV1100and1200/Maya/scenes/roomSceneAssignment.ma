@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: roomSceneAssignment.ma
-//Last modified: Thu, Sep 25, 2025 02:19:32 PM
+//Last modified: Tue, Oct 07, 2025 04:42:54 PM
 //Codeset: 1252
 file -rdi 1 -ns "bookMesh1" -rfn "bookMesh1RN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//assets/bookMesh1.ma";
 file -rdi 1 -ns "bookMesh2" -rfn "bookMesh2RN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//assets/bookMesh2.ma";
@@ -25,6 +25,9 @@ file -rdi 1 -ns "wallMesh1" -rfn "wallMesh1RN" -op "v=0;" -typ "mayaAscii" "C:/G
 file -rdi 1 -ns "wallMesh2" -rfn "wallMesh2RN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//assets/wallMesh2.ma";
 file -rdi 1 -ns "Unit5_HardSurface" -rfn "Unit5_HardSurfaceRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//scenes/Unit5_HardSurface.ma";
+file -rdi 1 -ns "plantPot" -rfn "plantPotRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//assets/plantPot.ma";
+file -rdi 2 -ns "tableMesh" -rfn "plantPot:tableMeshRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//assets/tableMesh.ma";
 file -r -ns "bookMesh1" -dr 1 -rfn "bookMesh1RN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//assets/bookMesh1.ma";
 file -r -ns "bookMesh2" -dr 1 -rfn "bookMesh2RN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//assets/bookMesh2.ma";
 file -r -ns "bookMesh3" -dr 1 -rfn "bookMesh3RN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//assets/bookMesh3.ma";
@@ -46,32 +49,34 @@ file -r -ns "wallMesh1" -dr 1 -rfn "wallMesh1RN" -op "v=0;" -typ "mayaAscii" "C:
 file -r -ns "wallMesh2" -dr 1 -rfn "wallMesh2RN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//assets/wallMesh2.ma";
 file -r -ns "Unit5_HardSurface" -dr 1 -rfn "Unit5_HardSurfaceRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//scenes/Unit5_HardSurface.ma";
+file -r -ns "plantPot" -dr 1 -rfn "plantPotRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/DAGV1200_3D_Modeling/DAGV1100and1200/Maya//assets/plantPot.ma";
 requires maya "2026";
 requires "stereoCamera" "10.0";
 requires "mtoa" "5.5.3";
+requires "mtoa" "5.5.3";
+requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "B3413235-4A29-6077-37AE-A58E61F824C8";
+fileInfo "UUID" "FA37DA79-489E-5B0E-9590-70B525D5DE96";
 createNode transform -s -n "persp";
 	rename -uid "63CE3BEC-4377-5CBB-2840-87951079174F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -31.723245449527386 37.141410278596076 32.081321218491169 ;
-	setAttr ".r" -type "double3" -35.264389682754654 -45 -1.5742942482382308e-14 ;
-	setAttr ".rp" -type "double3" -6.6613381477509314e-16 3.5527136788005009e-15 -1.4210854715202004e-14 ;
-	setAttr ".rpt" -type "double3" 1.1625854043981703e-14 -9.4235345628086843e-15 4.3876318467800018e-15 ;
+	setAttr ".t" -type "double3" -13.242026795585261 20.851559708566786 27.901389227982847 ;
+	setAttr ".r" -type "double3" -27.000000000000288 -28.800000000000093 9.07374881960365e-16 ;
+	setAttr ".rpt" -type "double3" 2.0862769943823296e-15 -5.6683418736203781e-16 -4.4545949559860781e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "55135EE7-41E2-5951-EEF2-8F950B4E7179";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 53.951059944815512;
+	setAttr ".coi" 33.071770434900102;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0.12499999999999289 7.75 -0.12499999999998579 ;
+	setAttr ".tp" -type "double3" 0.125 7.75 -0.125 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "E72D930D-4C82-5D65-E827-509C740C5B5B";
@@ -124,20 +129,20 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "308AE269-421B-0492-293E-20852883497F";
+	rename -uid "8E206B10-4DF0-24FC-5A6F-C2951B0CD20F";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "B91161E2-4F0E-7D57-9E64-BD8C966D2A00";
+	rename -uid "6CF5362F-48AD-D670-4716-D3B00289ECB1";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "769D2D31-4DFA-A354-0FE4-5AA0B45924F9";
+	rename -uid "83CCF837-43D7-53E4-5361-DE980A514B08";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "DFE01894-4BEE-B9EF-030D-9E97AC7619B9";
+	rename -uid "8C86D054-47C2-96EC-214A-429F8EC153AA";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "AAF23610-42B8-195C-AF2E-0897C9F59B14";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "E37CEDB3-43D3-D534-F793-07B884D578A5";
+	rename -uid "6C7089B5-43F2-8CED-D463-BF89545C352B";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "93B1C1BA-435E-5F5F-8099-118865804487";
 	setAttr ".g" yes;
@@ -325,6 +330,14 @@ createNode reference -n "Unit5_HardSurfaceRN";
 		"Unit5_HardSurfaceRN" 0;
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode reference -n "plantPotRN";
+	rename -uid "9F95EB4B-4FFE-37EB-EE3F-62B7BDABFE45";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"plantPotRN"
+		"plantPot:tableMeshRN" 0
+		"plantPotRN" 0;
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -343,7 +356,7 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
-	setAttr -s 13 ".r";
+	setAttr -s 14 ".r";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -351,9 +364,9 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 20 ".dsm";
+	setAttr -s 23 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 3 ".gn";
+	setAttr -s 6 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
@@ -374,6 +387,8 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
