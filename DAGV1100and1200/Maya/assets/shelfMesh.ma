@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: shelfMesh.ma
-//Last modified: Fri, Oct 24, 2025 08:13:54 PM
+//Last modified: Fri, Oct 24, 2025 09:46:26 PM
 //Codeset: 1252
 requires maya "2026";
 requires "stereoCamera" "10.0";
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "F5E8E617-4672-75A4-8435-9B99C174A204";
+fileInfo "UUID" "701EA403-4422-8CFB-8DBE-D788B6C860C2";
 createNode transform -n "shelfMesh";
 	rename -uid "5C9A289B-46B0-2ACF-62CF-E992A282037D";
 	setAttr ".rp" -type "double3" 5.9999998956918716 0 -10.250000476837158 ;
@@ -696,20 +696,20 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "9A683CC0-49C0-B22A-B424-A3B9EFCF7A69";
+	rename -uid "F38157ED-402C-2D12-B37A-FFBCFC902156";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "B51882B6-4FD5-9CD6-BA04-B68D119C5ABC";
+	rename -uid "318265EB-4C90-FEA8-9D35-D99D0D444E2F";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D73F2A51-4704-17ED-204F-F2808D671735";
+	rename -uid "09B86C8C-4B92-2108-8454-198FAECEEC3E";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "10CF3121-4D19-99F0-0CDB-CEB9977AFC22";
+	rename -uid "C1F61453-4A19-2DD7-907C-28AA008F9E10";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "BC9454AA-4275-9967-B495-1DAAA800D83D";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "070DEDBF-4CF4-FF64-547A-90A2D361841D";
+	rename -uid "52230C7D-4DBE-49C6-CE2A-949342A156C6";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "3BFD9F5E-4BDC-97CB-1237-62BA2F3608AB";
 	setAttr ".g" yes;
@@ -821,6 +821,8 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "groupId1.id" "|shelfMesh|shelfMesh.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "|shelfMesh|shelfMesh.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
